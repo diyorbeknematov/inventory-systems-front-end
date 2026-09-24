@@ -229,6 +229,10 @@ function Dashboard({
   /* ---------------------------------------------------------------------- */
 
   useEffect(() => {
+    if (!isAdmin) {
+      return;
+    }
+    
     const loadMerchants = async () => {
       try {
         setLoadingMerchants(true);
